@@ -1,0 +1,104 @@
+
+.about {
+    padding: 5rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+
+    @media(min-width: 920px) {
+        padding: 7rem 2rem;
+        background-color: $white;
+    }
+
+    @media(min-width: 1200px) { // xl
+        padding: 10rem 2rem;
+        flex-direction: row;
+    }
+
+
+    &__photo {
+        flex-basis: 100%;
+        // background-color: orange;
+        border-radius: .2rem;
+        height: auto;  
+        position: relative;
+        overflow: hidden;
+
+    }
+
+    &__photo:hover  &__photo-image {
+        transform: scale(1);
+        filter: brightness(100%);
+    }
+    
+    &__photo:hover &__photo-label {
+        overflow: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &__photo-image {
+        background-color: orange;
+        border-radius: .2rem;
+        transform: scale(1.2);
+        backface-visibility: hidden;
+        position: relative;
+        width: 100%;
+        transition: all .2s;
+        cursor: pointer;
+        filter: brightness(80%);
+        height: 100%; 
+
+    }
+
+    &__photo-label {
+        bottom: 0;
+        font-size: 1.5rem;
+        padding: 1.5rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: rgba($black, .2);
+        color: $white;
+        text-transform: capitalize;
+        overflow: hidden;
+        opacity: 0;
+        transition: all .2s;
+        transform: translateY(100%);
+    }
+
+
+    &__description {
+        padding: 0 2rem 0 4rem;
+        flex-basis: 75%;
+        color: $color-dark-1;
+        margin-top: 4rem;
+        // background-color: tomato;
+        position: relative;
+
+
+        @media(min-width: 1200px) { // xl
+            margin-top: 0;
+        }
+    }
+
+
+    &__founder {
+        position: absolute;
+        bottom: 0;
+        // background-color: #f9f9f9;
+        font-size: 1.4rem;
+        // text-transform: unset;
+        padding: 1rem;
+        right: 0;
+    }
+    
+
+    &__paragraph {
+        font-size: 1.65rem;
+        line-height: 3.5rem;
+        margin-top: 4rem;
+        padding: 1rem 0 4rem;
+    }
+}

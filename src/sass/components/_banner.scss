@@ -1,0 +1,185 @@
+body {
+    overflow-x: hidden;
+}
+.banners {
+    // background-color: tomato;
+    // height: 50vh;
+    display: block;
+    width: 100%; 
+
+    @include respond($extra-devices)  {
+        height: 100vh;
+    }
+}
+
+
+.banner {
+    position: relative;
+
+    @include respond($portraint-devices)  {
+        text-align: center;   
+    }
+
+    &__title {
+        color: $white;
+        // font-size: 2.15rem;
+        font-size: 2.15rem;
+     
+        @include respond($small-devices)  {   
+            font-size: 3.85rem;
+        }
+
+        @include respond($portraint-devices)  {   
+            font-size: 3.85rem;
+        }
+
+        @include respond($extra-devices)  {   
+            font-size: 3.95rem;
+        }
+
+        @include respond($large-devices) {
+            font-size: 4rem;
+        }
+    }   
+
+    &__description {
+        margin-top: 2rem;
+        font-size: 1.25rem;
+        color: $white;
+        line-height: 2rem;
+        text-align: justify;
+
+        @include respond($small-devices)  {   
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+
+        @media(min-width: 920px) {
+            font-size: 1.95rem;
+            line-height: 2.5rem;
+        }
+
+
+        @include respond($large-devices) {
+            font-size: 2rem;
+            line-height: 3.75rem;
+        }
+    }
+
+    &,
+    &__photo,
+    &__photo img {
+        border: none;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__photo img {
+        filter: brightness(70%);
+    }
+
+    &__details {
+        //  position: absolute;
+        //  background-color: #000;
+        //  top: 60%;
+        //  left: 50%;
+        //   transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 2rem;
+
+        @include respond($small-devices)  {   
+            padding: 4rem;
+        }
+
+        @include respond($medium-devices)  {   
+            padding: 8rem;
+        }
+
+        @include respond($portraint-devices) {
+            padding: 10rem;
+        }
+
+
+        @include respond($large-devices) {
+            width: auto;
+            margin-top: 8rem;
+            padding: 8rem 25rem ;
+            height: auto;
+
+        }
+    }
+
+    &__action-icon {
+        margin-left: 1rem;
+
+        @include respond($portraint-devices) {
+            font-size: 2rem;
+        }
+
+    }
+
+    &__action {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+
+        font-size: 1.85rem;
+        margin: 0 auto;
+        margin-top: 6rem;
+        width: 14rem;
+        height: 4rem;
+
+        background-color: #3d6ae7;
+        color: #fcfcfc;
+
+        border-radius: 2px;
+        line-height: 4rem;
+        outline: none;
+        text-align: center;
+
+        transition: transform .2s;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        @include respond($medium-devices) {
+            opacity: 1;
+            visibility: visible;
+            height: 5rem;
+
+        }
+        @include respond($portraint-devices) {
+            width: 20rem;
+            font-size: 2rem;
+            height: 7rem;
+        }
+
+
+        @include respond($large-devices) {
+            width: 15rem;
+            font-size: 1.65rem;
+            height: 7rem;
+        }
+
+        @include respond($extra-devices) {
+            height: 5rem;
+        }
+    }
+}
+
+
+.slick-list,
+.slick-list + div {
+    height: 100%;
+}
+

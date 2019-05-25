@@ -1,0 +1,108 @@
+@media(min-width: 720px) {
+
+}
+
+
+@media(min-width: 920px) {
+
+
+}
+
+@media(min-width: 1024px) {
+
+}
+
+
+@media(min-width: 1200px) { // xl
+
+}
+
+
+
+.newsletter {
+    background-color: $color-light-2;
+    padding: 7rem 5rem;
+
+
+    @media(min-width: 1024px) {
+        padding: 10rem;
+    }
+
+    &__info {
+        padding: 5rem 0;
+
+        @media(min-width: 1024px) {
+            padding: 10rem 35rem 0 35rem;
+        }
+    }
+
+    &__info p {
+        line-height: 3rem;
+        font-size: 1.57rem;
+        text-align: justify;
+        text-transform: uppercase;
+
+        @media(min-width: 1024px) {
+            text-align: center;
+        }
+    }
+
+    &__form {
+        padding: 5rem 0;
+
+        
+        @media(min-width: 1200px) {
+            padding: 10rem 0;
+        }
+  
+    }
+    
+    &__form-item {
+        // background-color: #000;
+        width: 100%;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input, button {
+            border: none;
+            height: 6rem;
+
+        }
+
+        input {
+            // border-radius: 2px;
+            width: 80%;
+            font-size: 2rem;
+            outline: none;
+            padding: 0 2rem;
+            background-color: #ebe6e6;
+            display: inline-block;
+        }
+
+
+        button i {
+            font-size: 2rem;
+            margin-left: 1rem;
+        }
+
+        button {
+            color: $white;
+            font-size: 1.45rem;
+            font-weight: 300;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: $colo-blue-1;
+            transition: all .2s;
+            text-transform: uppercase;
+            &:hover {
+                background-color: darken($colo-blue-1, 5);
+            }
+        }
+
+
+    }
+}

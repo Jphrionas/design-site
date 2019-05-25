@@ -1,0 +1,46 @@
+// Abstract
+@import './abstract/vars';
+@import './abstract/mixins';
+
+@import './basic/reset';
+@import './basic/utilities';
+
+@import './typograph/title';
+
+@import './components/container';
+@import './components/navbar';
+@import './components/banner';
+@import './components/list';
+
+@import './layout/header';
+@import './layout/section-about';
+@import './layout/section-projetos';
+@import './layout/section-comentarios';
+@import './layout/section-fornecedores';
+@import './layout/section-localizacao';
+@import './layout/newsletter';
+@import './layout/footer';
+
+
+
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    opacity: .15;
+    // position: relative;
+    // box-sizing: content-box;
+}
+
+
+.bg-video__content {
+    height: 100%;
+    width: 100%;
+    -webkit-object-fit: cover;
+    object-fit: cover;
+}

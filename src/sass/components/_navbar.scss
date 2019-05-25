@@ -1,0 +1,132 @@
+@mixin vendor($property, $value...){
+-webkit-#{$property}:$value;
+    -moz-#{$property}:$value;
+    -ms-#{$property}:$value;
+        -o-#{$property}:$value;
+        #{$property}:$value;
+}
+  
+
+.nav.nav--show {
+    // z-index: 88;
+    -webkit-clip-path: circle(120rem at 90% 0);
+    clip-path: circle(120rem at 100% 0);
+    pointer-events: all;
+
+}
+.nav {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
+
+    @media(max-width: 1200px) {
+        transition: all .8s cubic-bezier(.49,.46,.29,.67);
+        -webkit-clip-path: circle(0 at 100% 0);
+        clip-path: circle(0 at 100% 0);
+        pointer-events: none;
+        background-color: #fff;
+    }
+    
+    @include respond($extra-devices) {
+        position: relative;
+        height: 8rem;
+        width: auto;
+
+        overflow: visible;
+        opacity: 1;
+        z-index: 88;
+
+    }
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-between;
+    background-color: tomato;
+    height: 100%;
+    padding: 1rem;
+
+    @include respond($extra-devices) {
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+.nav__item {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    background-color: #ff745b;
+    text-align: center;
+    margin: 0 auto;
+    transform: skew(-12deg);
+    margin-bottom: 2rem;
+
+
+    @media (max-width: #{$extra-devices}) {
+
+        &:active {
+            transform: skew(-12deg) translateX(2rem);
+        }
+    }
+
+    @include respond($extra-devices) {
+        transform: skew(0);
+        background-color: transparent;
+        width: auto;
+        margin: 0 ;
+        &:hover {
+            background-color: rgba($black, .5);
+        }
+    }
+}
+.nav__link {
+    font-size: 1.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+    margin: 0 auto;
+    justify-content: center;
+    color: #fff;
+    font-size: 2.15rem;
+    
+
+    @include respond($extra-devices) {
+        padding: 0;
+        height: 100%;
+        margin: 0;
+        color: $white;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 1.35rem;
+        padding: 0 1.5rem;
+        background-color: transparent;
+        //transform: skew(0);
+        transform: skew(0) translateX(0);
+    }
+
+}
+
+
+.nav__link i {
+    margin-right: 1rem;
+    font-size: 3rem;
+
+    @include respond($extra-devices) {
+        font-size: 1.85rem;
+        line-height: 8rem;
+        color: $white;
+        margin-right: 1rem;
+      
+    }
+}

@@ -1,0 +1,19 @@
+$small-devices:  480px;
+$medium-devices: 720px;
+$portraint-devices: 920px;
+$large-devices: 1024px;
+$extra-devices: 1200px;
+
+@mixin respond($viewport) {
+    @media(min-width: #{$viewport}) {
+        @content;
+    }
+}
+
+@mixin support($property, $value...) {
+    -webkit-#{$property}: #{$value};
+    #{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    -ie-#{$property}: #{$value};
+}
